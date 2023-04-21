@@ -37,10 +37,13 @@ events_names = [event.text for event in driver.find_elements(By.XPATH, f"{xpath}
 
 print(event_dates[0])
 print(events_names[0])
-event_dic = {}
+events = {}
 for n in range(len(event_dates)):
-    event_dic[n] = {"time": f"2023-{event_dates[n]}", "name": events_names[n]}
+    events[n] = {
+        "time": f"2023-{event_dates[n]}",
+        "name": events_names[n]
+    }
 
-print(event_dic)
+print(events)
 
 driver.close()
